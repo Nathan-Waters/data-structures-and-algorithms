@@ -128,12 +128,12 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   for(let i = 0; i < recipe.ingredients.length; i++){
-    // let x = recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1);
+    let x = recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1);
+    result.push(x.slice(x.indexOf(' ')+1));
 
-    recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1);
-    result.push(recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1).slice(recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1).indexOf(' ')+1));
+    // recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1);
+    // result.push(recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1).slice(recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ')+1).indexOf(' ')+1));
 
-    // result.push(x.slice(x.indexOf(' ')+1));
   }
   return result;
 };
