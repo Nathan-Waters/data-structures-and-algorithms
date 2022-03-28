@@ -9,7 +9,6 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
   return arr.reduce((highNum, lowNum) => {
     if(highNum < lowNum) {
       highNum = lowNum;
@@ -44,9 +43,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // return Object.values(obj).forEach(value => {
-  //   if(value =)
-  // })
+  return Object.values(obj).includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +66,11 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-
+  const newArr = [];
+  Object.keys(obj).forEach(key => {
+    newArr.push(`${key}: ${obj[key]}`);
+  });
+  return newArr;
 };
 
 
@@ -125,9 +126,13 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(element => {
+    houses.push(element.house);
+  });
   return houses;
 };
+
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -142,8 +147,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  let peopleArray = [];
+  Object.values(arr).forEach(i => {
+    peopleArray.push([i.name, i.children]);
+  });
+  for (let i = 0; i < peopleArray.length; i++) {
+    if (character === peopleArray[i][0]) {
+      if (peopleArray[i][1]) {
+        return true;
+      } else{
+        return false;
+      }
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
