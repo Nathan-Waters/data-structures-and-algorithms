@@ -85,16 +85,19 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  const totalsArr = [];
-  let totalNum = 0;
-  for (let i = 0; i < stores[0].length; i++) {
-    for (let j = 0; j < stores.length; j++) {
-      totalNum += stores[j][i];
-    }
-    totalsArr.push(totalNum);
-    totalNum = 0;
-  }
+  const newArr = [];
+  stores.forEach(sale => {
+    sale.forEach((num, i) => {
+      if (newArr[i]){
+        newArr[i] += num;
+      } else {
+        newArr[i] = num;
+      }
+    });
+  });
+  return newArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
