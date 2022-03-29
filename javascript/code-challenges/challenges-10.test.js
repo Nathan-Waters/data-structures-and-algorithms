@@ -36,6 +36,7 @@ const findMax = (matrix) => {
     }
   } return max;
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -57,6 +58,7 @@ const totalSum = (matrix) => {
       sum += matrix[i][j];
     }
   } return sum;
+
 };
 
 
@@ -92,7 +94,6 @@ const grandTotal = (stores) => {
     totalsArr.push(totalNum);
     totalNum = 0;
   }
-  return totalsArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
