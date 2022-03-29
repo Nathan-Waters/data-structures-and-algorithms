@@ -26,9 +26,16 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let max = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      let min = matrix[i][j];
+      if (min > max) {
+        max = min;
+      }
+    }
+  } return max;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
