@@ -11,9 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  let reg = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[A-Za-z]+/;
+  let reg = /^(Mr.|Mrs.|Ms.|Dr.)[ ][a-zA-z]+/;
   return arr.filter(str => reg.test(str));
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -118,7 +118,16 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return arr.sort((a, b) => a[property] < b[property] ? -1 : 1);
+  return arr.sort((a, b) => {
+    if (a[property] < b[property]) {
+      return -1;
+    }
+    else if (a[property] > b[property]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
